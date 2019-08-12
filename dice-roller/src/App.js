@@ -20,9 +20,13 @@ class App extends React.Component {
   }
   render = () =>{
     return(
-      <div style={{display: "flex", justifyContent: "center"}}>
-        <Dice change={this.diceChange} dice={this.state.num} addRoll={this.addRoll}/>
-        <RollCount logs={this.state.logRoll}/>
+      <div style={{maxHeight:"400px",overflowWrap: "break-word", textAlign:"center"}}>
+        <h1>Dice Roller</h1>
+        <h5>Click the dice to roll</h5>
+          <div style={{display: "flex", justifyContent: "center"}}>
+            <Dice change={this.diceChange} dice={this.state.num} addRoll={this.addRoll}/>
+            <RollCount logs={this.state.logRoll}/>
+          </div>
       </div>
 
     )
