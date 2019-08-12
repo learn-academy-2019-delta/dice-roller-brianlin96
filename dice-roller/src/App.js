@@ -15,14 +15,13 @@ class App extends React.Component {
     this.setState({num: newNum})
   }
   addRoll = (roll) => {
-    let joined = this.state.logRoll.concat(roll)
-    this.setState({logRoll: joined})
+
+    this.setState({logRoll: [roll,...this.state.logRoll]})
   }
   render = () =>{
     return(
       <div style={{display: "flex", justifyContent: "center"}}>
         <Dice change={this.diceChange} dice={this.state.num} addRoll={this.addRoll}/>
-        <div style={{display: "flex", flexDirection: "column", justifyContent:"flex-end"}} ></div>
         <RollCount logs={this.state.logRoll}/>
       </div>
 
